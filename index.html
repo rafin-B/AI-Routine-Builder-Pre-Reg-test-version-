@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI PreReg Assistant</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="allButFooter">
+        <div class="header-container">
+            <div class="heading">
+                <h1 class="titlehead">AI Pre-Registration Assistant</h1>
+                <h5>Intelligently build your class schedule with ease</h5>
+            </div>
+            <button id="theme-toggle" title="Toggle theme">🌙</button>
+        </div>
+
+        <div class="main-container">
+            <div class="controls-container">
+                <div class="control-group" id="course-selection-group">
+                    <h3>1. Add Courses</h3>
+                    <div class="course-input-container">
+                        <div class="course-input-wrapper">
+                            <input type="text" id="course-search" placeholder="Search by course code..." autocomplete="off">
+                            <button id="add-course-btn">Add</button>
+                        </div>
+                        <div id="search-suggestions" class="suggestions-list hidden"></div>
+                    </div>
+                    <ul id="selected-courses-list"></ul>
+                </div>
+
+                <div class="control-group" id="preferences-group">
+                    <h3>2. Set Preferences</h3>
+                    <div class="preference">
+                        <label>Preferred Days:</label>
+                        <div id="preferred-days" class="days-checkboxes">
+                            <span><input type="checkbox" id="Sunday" value="Sunday" checked><label for="Sunday">Su</label></span>
+                            <span><input type="checkbox" id="Monday" value="Monday" checked><label for="Monday">Mo</label></span>
+                            <span><input type="checkbox" id="Tuesday" value="Tuesday" checked><label for="Tuesday">Tu</label></span>
+                            <span><input type="checkbox" id="Wednesday" value="Wednesday" checked><label for="Wednesday">We</label></span>
+                            <span><input type="checkbox" id="Thursday" value="Thursday" checked><label for="Thursday">Th</label></span>
+                            <span><input type="checkbox" id="Saturday" value="Saturday" checked><label for="Saturday">Sa</label></span>
+                        </div>
+                    </div>
+                    <div class="preference">
+                        <label>Preferred Time Range:</label>
+                        <div class="time-range-inputs">
+                             <input type="time" id="start-time" value="08:00">
+                             <span>to</span>
+                             <input type="time" id="end-time" value="18:00">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group" id="generate-group">
+                     <button id="generate-btn">Generate Routines</button>
+                </div>
+            </div>
+
+            <div id="output-container">
+                <div id="loading" class="hidden">Generating...</div>
+                <div id="suggestions-container"></div>
+                <div id="final-routine-container" class="hidden">
+                    <h2>Your Confirmed Routine</h2>
+                    <div class="final-routine-wrapper">
+                        <div id="final-routine-table-wrapper" class="routine-table"></div>
+                        <div id="final-status-table-wrapper" class="status-table"></div>
+                    </div>
+                     <button id="downloadTable">Download Routine</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- <footer>
+        Revamped by <a href="https://github.com/your-username" target="_blank">Your Name or Handle</a> | Inspired by the original PrePreReg by eniac00
+    </footer>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
